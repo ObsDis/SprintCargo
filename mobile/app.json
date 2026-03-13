@@ -1,0 +1,85 @@
+{
+  "expo": {
+    "name": "SprintCargo",
+    "slug": "sprint-cargo-mobile",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "scheme": "sprintcargo",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0F172A"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.sprintcargo.mobile",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "SprintCargo needs your location to show nearby jobs and track deliveries.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "SprintCargo uses background location to provide real-time delivery tracking for shippers.",
+        "NSLocationAlwaysUsageDescription": "SprintCargo uses background location to provide real-time delivery tracking for shippers.",
+        "NSCameraUsageDescription": "SprintCargo uses the camera to take photos of loaded cargo and delivery confirmation.",
+        "NSPhotoLibraryUsageDescription": "SprintCargo accesses your photo library for uploading delivery photos."
+      },
+      "config": {
+        "usesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "com.sprintcargo.mobile",
+      "adaptiveIcon": {
+        "backgroundColor": "#0F172A",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_BACKGROUND_LOCATION",
+        "CAMERA",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "RECEIVE_BOOT_COMPLETED",
+        "VIBRATE"
+      ],
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-secure-store",
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "SprintCargo uses background location to provide real-time delivery tracking.",
+          "locationAlwaysPermission": "SprintCargo uses background location to provide real-time delivery tracking.",
+          "locationWhenInUsePermission": "SprintCargo needs your location to show nearby jobs and track deliveries.",
+          "isAndroidBackgroundLocationEnabled": true
+        }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "SprintCargo uses the camera to take photos of loaded cargo and delivery confirmation."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "SprintCargo accesses your photo library for uploading delivery photos.",
+          "cameraPermission": "SprintCargo uses the camera to take photos of loaded cargo and delivery confirmation."
+        }
+      ],
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/icon.png",
+          "color": "#3B82F6"
+        }
+      ]
+    ]
+  }
+}
